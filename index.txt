@@ -1,3 +1,203 @@
 This is index file.
 changes made by master.
+////////////////////////////
+kata 6
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Manan Bhateja/Desktop/katta.git/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git add .
+warning: LF will be replaced by CRLF in index.txt.
+The file will have its original line endings in your working directory
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git commit -m "first"
+[master (root-commit) 71d2d24] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git branch merge-conflict-branch1
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git switch merge-conflict-branch1
+Switched to branch 'merge-conflict-branch1'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ git status
+On branch merge-conflict-branch1
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ ls
+index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ git status
+On branch merge-conflict-branch1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ git commit -a -m "change by branch1"
+warning: LF will be replaced by CRLF in index.txt.
+The file will have its original line endings in your working directory
+[merge-conflict-branch1 5422335] change by branch1
+ 1 file changed, 2 insertions(+)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ git status
+On branch merge-conflict-branch1
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ git switch
+fatal: missing branch or commit argument
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (merge-conflict-branch1)
+$ git switch master
+Switched to branch 'master'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git commit -a -m "changes by master"
+[master 4a5d276] changes by master
+ 1 file changed, 2 insertions(+)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git merge merge-conflict-branch1
+Auto-merging index.txt
+CONFLICT (content): Merge conflict in index.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ git add .
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master|MERGING)
+$ git commit -m "changed"
+[master e8d0d6b] changed
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git merge m
+master                   merge-conflict-branch1
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git merge merge-conflict-branch1
+Already up to date.
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git log --oneline --graph
+*   e8d0d6b (HEAD -> master) changed
+|\
+| * 5422335 (merge-conflict-branch1) change by branch1
+* | 4a5d276 changes by master
+|/
+* 71d2d24 first
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git remote add origin git@github.com:manan23bhateja/kata6.git
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git remote
+origin
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$ git push origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (10/10), 816 bytes | 408.00 KiB/s, done.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To github.com:manan23bhateja/kata6.git
+ * [new branch]      master -> master
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kata6 (master)
+$
+
 
